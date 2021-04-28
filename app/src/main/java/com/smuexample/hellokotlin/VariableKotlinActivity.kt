@@ -18,13 +18,19 @@ class VariableKotlinActivity : AppCompatActivity() {
         val txtActivityStartTime = findViewById<TextView>(R.id.txtActivityStartTime)
         val txtCountBtnClicks = findViewById<TextView>(R.id.txtCountBtnClicks)
         val btnClickMe = findViewById<Button>(R.id.btnClickMe)
+        val txtElapsedTime = findViewById<TextView>(R.id.txtElapsedTime)
 
         btnClickMe.setOnClickListener {
             clickCount++
             txtCountBtnClicks.text = "Button clicks = ${clickCount}" //"Button clicks = " + clickCount;
+            var elapsedSeconds : Long = ((System.currentTimeMillis() - startTime) / 100.0).toLong()
+            txtElapsedTime.text = "${elapsedSeconds} seconds elapsed"
 
         }
-        val  timeText = SimpleDateFormat("HH:mm:ss", Locale.KOREA).format(startTime)
+        val timeText = SimpleDateFormat("HH:mm:ss", Locale.KOREA).format(startTime)
         txtActivityStartTime.text = "Activity start time = ${timeText}"
+        txtCountBtnClicks.text = "Elasped Time"
+
+
     }
 }

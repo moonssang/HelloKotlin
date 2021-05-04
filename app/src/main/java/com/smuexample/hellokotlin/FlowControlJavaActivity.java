@@ -38,7 +38,7 @@ public class FlowControlJavaActivity extends AppCompatActivity {
                 switch (number){
                     case 4:
                         case 9 :
-                        btnLD.setText("실행 4 for 9"); break;
+                        btnLD.setText("실행 4 for "+ number); break;
                     default:
                         btnLD.setText("실행 "); break;
                 }
